@@ -1,4 +1,4 @@
-# Florida Trip Itinerary — Feb 17–22, 2026
+## Florida Trip Itinerary — Feb 17–22, 2026
 
 **Group:** 6 adults · **Base:** Mystic Dunes Resort & Golf Club, Kissimmee  
 **Vibe:** Morning people, balanced mix of adventure + relaxation, casual evenings
