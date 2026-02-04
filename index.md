@@ -9,9 +9,10 @@
 
 ## Tuesday, Feb 17 — Arrival Day
 
-### Arrive & Settle In *(~1.5 hrs)*
+### Arrive & Settle In *(~2.5 hrs)*
 - Drive from MCO to Mystic Dunes (~30–40 min)
 - Check in, unpack, walk the resort, scope pool and common areas
+- Grab supplies (Local Publix, Target)
 
 ### Evening — Pick Your Adventure
 
