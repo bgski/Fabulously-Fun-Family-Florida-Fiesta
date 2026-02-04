@@ -47,7 +47,7 @@ All within walking distance of Howl at the Moon:
 
 ---
 
-### ✅ Option B: Low-Key Celebration Dinner
+### ✅ Option B: Low-Key Dinner in the town of Celebration
 
 Short drive, walkable town center, lakeside vibes.
 
