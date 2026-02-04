@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Florida Trip — Feb 17–22, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sand: #faf6f1;
+      --sand-dark: #f0e8dd;
+      --ocean: #1a6b7a;
+      --ocean-light: #e6f3f5;
+      --ocean-muted: #2d8a9a;
+      --sunset: #e07b4c;
+      --sunset-light: #fdf0ea;
+      --palm: #3a7d44;
+      --palm-light: #edf5ee;
+      --ink: #2c2420;
+      --ink-light: #6b5e54;
+      --ink-faint: #a89888;
+      --white: #ffffff;
+      --divider: #e2dbd2;
+      --card-shadow: 0 1px 3px rgba(44,36,32,0.06), 0 4px 12px rgba(44,36,32,0.04);
+      --card-shadow-hover: 0 2px 8px rgba(44,36,32,0.1), 0 8px 24px rgba(44,36,32,0.06);
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--sand);
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 15px;
+      padding-bottom: 80px;
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      background: linear-gradient(135deg, #1a6b7a 0%, #2d8a9a 40%, #e07b4c 100%);
+      color: white;
+      padding: 48px 20px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+    .hero .subtitle {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 16px;
+    }
+    .hero .trip-meta {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+    .hero .pill {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* ---- NAV ---- */
+    .day-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--divider);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .day-nav::-webkit-scrollbar { display: none; }
+    .day-nav-inner {
+      display: flex;
+      padding: 0 12px;
+      gap: 2px;
+      min-width: max-content;
+    }
+    .day-nav a {
+      display: block;
+      padding: 12px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-light);
+      text-decoration: none;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .day-nav a:hover, .day-nav a:active {
+      color: var(--ocean);
+      border-bottom-color: var(--ocean);
+    }
+
+    /* ---- MAIN ---- */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* ---- DAY SECTIONS ---- */
+    .day-section {
+      margin-top: 24px;
+    }
+    .day-header {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ocean);
+      padding: 16px 0 4px;
+      letter-spacing: -0.3px;
+      border-top: 3px solid var(--ocean);
+    }
+    .day-subtitle {
+      font-size: 14px;
+      color: var(--ink-light);
+      margin-bottom: 16px;
+    }
+
+    /* ---- BLOCKS ---- */
+    .block {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: var(--card-shadow);
+    }
+    .block h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .block p, .block li {
+      font-size: 14px;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    .block ul {
+      padding-left: 18px;
+      margin: 8px 0;
+    }
+    .block li { margin-bottom: 4px; }
+
+    /* ---- OPTIONS (COLLAPSIBLE) ---- */
+    .option {
+      background: var(--white);
+      border-radius: var(--radius);
+      margin-bottom: 10px;
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+    }
+    .option-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .option-toggle:active { background: var(--sand); }
+    .option-badge {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: white;
+    }
+    .badge-a { background: var(--ocean); }
+    .badge-b { background: var(--sunset); }
+    .badge-c { background: var(--palm); }
+    .badge-d { background: #7a6a5a; }
+    .option-title {
+      flex: 1;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .option-chevron {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      color: var(--ink-faint);
+      transition: transform 0.25s ease;
+    }
+    .option.open .option-chevron { transform: rotate(180deg); }
+    .option-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .option.open .option-body { max-height: 5000px; }
+    .option-content {
+      padding: 0 16px 16px;
+    }
+
+    /* ---- TABLES ---- */
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 10px -4px;
+      padding: 0 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 360px;
+    }
+    thead th {
+      text-align: left;
+      padding: 8px 10px;
+      background: var(--sand);
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--ink-light);
+      border-bottom: 2px solid var(--divider);
+      white-space: nowrap;
+    }
+    tbody td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--sand-dark);
+      vertical-align: top;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    td strong { font-weight: 600; }
+
+    /* ---- DETAIL TABLE (key-value) ---- */
+    .detail-table { min-width: unset; }
+    .detail-table td:first-child {
+      font-weight: 600;
+      white-space: nowrap;
+      color: var(--ink-light);
+      width: 120px;
+      font-size: 12px;
+    }
+
+    /* ---- CALLOUTS ---- */
+    .callout {
+      background: var(--ocean-light);
+      border-left: 3px solid var(--ocean);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 12px 14px;
+      margin: 12px 0;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+    .callout strong { color: var(--ocean); }
+    .callout-warm {
+      background: var(--sunset-light);
+      border-left-color: var(--sunset);
+    }
+    .callout-warm strong { color: var(--sunset); }
+    .callout-green {
+      background: var(--palm-light);
+      border-left-color: var(--palm);
+    }
+    .callout-green strong { color: var(--palm); }
+
+    /* ---- LINKS ---- */
+    a { color: var(--ocean); }
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ocean);
+      text-decoration: none;
+      padding: 6px 0;
+    }
+    .link-btn:hover { text-decoration: underline; }
+
+    /* ---- SECTION HEADERS ---- */
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--ink-faint);
+      margin: 20px 0 8px;
+    }
+
+    /* ---- AREA GUIDE CARDS ---- */
+    .guide-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 10px;
+      box-shadow: var(--card-shadow);
+    }
+    .guide-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .guide-card p {
+      font-size: 13px;
+      color: var(--ink-light);
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+
+    /* ---- CHECKLIST ---- */
+    .checklist { list-style: none; padding: 0; }
+    .checklist li {
+      position: relative;
+      padding: 10px 0 10px 32px;
+      border-bottom: 1px solid var(--sand-dark);
+      font-size: 14px;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--divider);
+      border-radius: 4px;
+      background: var(--white);
+    }
+
+    /* ---- DRIVE TIMES ---- */
+    .drive-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--sand-dark);
+      font-size: 14px;
+    }
+    .drive-row:last-child { border-bottom: none; }
+    .drive-row .dest { flex: 1; }
+    .drive-row .time {
+      font-weight: 600;
+      color: var(--ocean);
+      white-space: nowrap;
+      margin-left: 12px;
+    }
+
+    /* ---- COST TABLE ---- */
+    .cost-total {
+      background: var(--ocean);
+      color: white;
+    }
+    .cost-total td {
+      font-weight: 700;
+      border-bottom: none;
+      padding: 10px;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (min-width: 480px) {
+      body { font-size: 16px; }
+      .hero h1 { font-size: 34px; }
+      .day-header { font-size: 24px; }
+      .block p, .block li { font-size: 15px; }
+      table { font-size: 14px; }
+    }
+
+    @media (min-width: 680px) {
+      .container { padding: 0 24px; }
+      .hero { padding: 64px 24px 48px; }
+      .hero h1 { font-size: 40px; }
+    }
+
+    /* Print-friendly */
+    @media print {
+      .day-nav { display: none; }
+      .option-body { max-height: unset !important; }
+      .hero { background: var(--ocean) !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>🌴 Fabulously-Fun-Family-Florida-Fiesta</h1>
+    <div class="subtitle">February 17–22, 2026</div>
+    <div class="trip-meta">
+      <span class="pill">👥 6 Adults</span>
+      <span class="pill">📍 Mystic Dunes Resort</span>
+      <span class="pill">🗓 5 Nights</span>
+    </div>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="day-nav">
+  <div class="day-nav-inner">
+    <a href="#tue">Tue 17</a>
+    <a href="#wed">Wed 18</a>
+    <a href="#thu">Thu 19</a>
+    <a href="#fri">Fri 20</a>
+    <a href="#sat">Sat 21</a>
+    <a href="#sun">Sun 22</a>
+    <a href="#guides">Areas</a>
+    <a href="#costs">Costs</a>
+    <a href="#book">Book</a>
+    <a href="#drives">Drives</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="callout" style="margin-top:20px">
+    Each day has a <strong>core plan</strong> plus <strong>options</strong> you can mix and match. Lock in the must-dos, flex the rest based on energy and weather.
+  </div>
+
+  <!-- ======================= TUESDAY ======================= -->
+  <section class="day-section" id="tue">
+    <h2 class="day-header">Tuesday, Feb 17</h2>
+    <p class="day-subtitle">Arrival Day</p>
+
+    <div class="block">
+      <h3>Arrive &amp; Settle In <span style="font-weight:400;color:var(--ink-faint)">~2.5 hrs</span></h3>
+      <ul>
+        <li>Drive from MCO to Mystic Dunes (~30–40 min)</li>
+        <li>Check in, unpack, walk the resort, scope pool and common areas</li>
+      </ul>
+    </div>
+
+    <p class="section-label">Evening — Pick Your Adventure</p>
+
+    <div class="option open" id="tue-a">
+      <button class="option-toggle" onclick="toggleOption(this)">
+        <span class="option-badge badge-a">A</span>
+        <span class="option-title">Dinner + Dueling Pianos on I-Drive</span>
+        <svg class="option-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
+      </button>
+      <div class="option-body">
+        <div class="option-content">
+          <p>Head to I-Drive for dinner near Howl at the Moon. Plenty of solid restaurants within walking distance so you only park once. Howl at the Moon runs <strong>Ladies Night</strong> on Tuesdays — free cover for the ladies, cheap drinks for everyone.</p>
+
+          <p class="section-label">Dinner (~1–1.5 hrs)</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Restaurant</th><th>Style</th><th>$/Person</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Yard House</strong></td><td>American, huge beer selection, shareable</td><td>$20–35</td></tr>
+                <tr><td><strong>Tin Roof</strong></td><td>Southern comfort, live music, craft drinks</td><td>$20–35</td></tr>
+                <tr><td><strong>Tapa Toro</strong></td><td>Spanish tapas, paella, flamenco dancers</td><td>$25–40</td></tr>
+                <tr><td><strong>Bar Louie</strong></td><td>Gastropub, craft cocktails, flatbreads</td><td>$18–30</td></tr>
+                <tr><td><strong>Ocean Prime</strong></td><td>Upscale seafood &amp; steaks</td><td>$50–80</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="section-label">Howl at the Moon (~2–3 hrs)</p>
+          <div class="table-wrap">
+            <table class="detail-table">
+              <tbody>
+                <tr><td>Address</td><td>8815 International Drive, Orlando, FL 32819</td></tr>
+                <tr><td>Phone</td><td>(407) 354-5999</td></tr>
+                <tr><td>Hours</td><td>Doors 7 PM, show 8 PM, open until 1:45 AM</td></tr>
+                <tr><td>Tue Special</td><td><strong>Ladies Night</strong> — free cover for ladies, $5 martinis, $3 Bacardi drinks, $12 beer buckets, half-off power hour 7–8 PM</td></tr>
+                <tr><td>Cover</td><td>$5/person (free for ladies)</td></tr>
+                <tr><td>Age</td><td>21+ only, valid ID required</td></tr>
+                <tr><td>Seating</td><td>First come first served (or reserve a table online)</td></tr>
+                <tr><td>Tip</td><td>Bring $1 and $5 bills for song requests</td></tr>
+                <tr><td>Vibe</td><td>Full party — two baby grands, drums, guitar, sing-alongs, dance-offs, 86oz bucket drinks</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout">
+            <strong>Why Tuesday works:</strong> I-Drive won't be wall-to-wall packed on a Tuesday — you'll actually get seats. Ladies Night keeps the cover free for half the group, and the half-off power hour (7–8 PM) means cheap first rounds for everyone.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="option" id="tue-b">
+      <button class="option-toggle" onclick="toggleOption(this)">
+        <span class="option-badge badge-b">B</span>
+        <span class="option-title">Low-Key Celebration Dinner</span>
+        <svg class="option-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
+      </button>
+      <div class="option-body">
+        <div class="option-content">
+          <p>If the group is wiped from travel and just wants a chill first night. Short drive, walkable town center, lakeside vibes.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Restaurant</th><th>Style</th><th>$/Person</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Columbia Restaurant</strong></td><td>Spanish-Cuban, old Florida elegance</td><td>$30–50</td></tr>
+                <tr><td><strong>Café D'Antonio</strong></td><td>Italian, wine-focused, patio seating</td><td>$25–40</td></tr>
+                <tr><td><strong>Celebration Town Tavern</strong></td><td>Pub fare, sports TVs, casual</td><td>$20–35</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:13px;color:var(--ink-light);margin-top:8px">📍 ~15 min from resort · ⏱ ~1.5–2 hrs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= WEDNESDAY ======================= -->
+  <section class="day-section" id="wed">
+    <h2 class="day-header">Wednesday, Feb 18</h2>
+    <p class="day-subtitle">Universal Day</p>
+
+    <div class="block">
+      <h3>Universal Epic Universe <span style="font-weight:400;color:var(--ink-faint)">~6 hrs at park</span></h3>
+      <p>Universal Orlando now has <strong>3 theme parks</strong>: Universal Studios Florida, Islands of Adventure, and the newest — Epic Universe. Features Super Nintendo World, How to Train Your Dragon – Isle of Berk, Dark Universe, and The Wizarding World of Harry Potter – Ministry of Magic.</p>
+
+      <p class="section-label">Ticket Options</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Ticket</th><th>$/Person</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1-Day Epic Universe</strong></td><td>$139–200</td><td>Single park, date-based</td></tr>
+            <tr><td><strong>1-Day Park-to-Park</strong></td><td>$185–260</td><td>Epic Universe + 1 other, hop freely</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout-warm callout">
+        <strong>Mardi Gras Alert:</strong> Universal Mardi Gras (Feb 7 – Apr 4) is running at Universal Studios Florida — nightly parades, live music, street performers, themed food booths, and beads. You could spend 4 hrs at Epic Universe, then hop to Studios for the evening.
+      </div>
+
+      <p class="section-label">In-Park Food</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Spot</th><th>Land</th><th>What to Get</th><th>Cost</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Toadstool Cafe</strong></td><td>Super Nintendo</td><td>Themed entrees, mushroom soup</td><td>$18–25</td></tr>
+            <tr><td><strong>Three Broomsticks</strong></td><td>Wizarding World</td><td>Shepherd's pie, fish &amp; chips</td><td>$15–22</td></tr>
+            <tr><td><strong>Quick service</strong></td><td>Throughout</td><td>Burgers, sandwiches, snacks</td><td>$14–20</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>Evening — CityWalk Dinner <span style="font-weight:400;color:var(--ink-faint)">~1.5–2 hrs</span></h3>
+      <p>You're already at Universal. Walkable strip with restaurants, bars, live music, and desserts. No separate admission needed.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Restaurant</th><th>Style</th><th>$/Person</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Bigfire</strong></td><td>Upscale American, wood-fired</td><td>$30–50</td><td>Best sit-down option</td></tr>
+            <tr><td><strong>Toothsome</strong></td><td>Burgers, shakes, wild desserts</td><td>$25–40</td><td>Save room for milkshakes</td></tr>
+            <tr><td><strong>Cowfish</strong></td><td>Sushi + burger mashups</td><td>$25–40</td><td>Unique, crowd-pleaser</td></tr>
+            <tr><td><strong>Antojitos</strong></td><td>Mexican, margaritas</td><td>$20–35</td><td>Good drinks menu</td></tr>
+            <tr><td><strong>Vivo Italian</strong></td><td>Pasta, wine, made-to-order</td><td>$25–40</td><td>Solid Italian</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= THURSDAY ======================= -->
+  <section class="day-section" id="thu">
+    <h2 class="day-header">Thursday, Feb 19</h2>
+    <p class="day-subtitle">Split Day: Golf + Spa / Shopping</p>
+
+    <div class="block">
+      <h3>🏌️ Boys: Golf at Oaks National <span style="font-weight:400;color:var(--ink-faint)">~5 hrs</span></h3>
+      <p>18-hole championship course by Karl Litten. Mature 100-year-old oaks, water hazards, moderate-to-challenging. Arrive early for the driving range before your 9:04 AM tee time.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Item</th><th>$/Person</th></tr></thead>
+          <tbody>
+            <tr><td>Green fees (18 holes, cart included)</td><td>$40–65</td></tr>
+            <tr><td>Range balls (bucket)</td><td>$5–10</td></tr>
+            <tr><td>Breakfast at The Oaks Café</td><td>$8–15</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px;color:var(--ink-light);margin-top:8px">📍 1500 The Oaks Blvd, Kissimmee · ☎️ (407) 483-3700 · 🚗 ~20–25 min</p>
+    </div>
+
+    <div class="block">
+      <h3>💅 Ladies: Spa &amp; Shopping</h3>
+      <p class="section-label" style="margin-top:4px">Mani-Pedi Options</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Salon</th><th>Area</th><th>Cost</th></tr></thead>
+          <tbody>
+            <tr><td><strong>A-List Nails &amp; Spa</strong></td><td>Kissimmee (near resort)</td><td>$40–70</td></tr>
+            <tr><td><strong>Near Disney Springs</strong></td><td>Disney Springs area</td><td>$50–80</td></tr>
+            <tr><td><strong>Resort spa</strong></td><td>Mystic Dunes</td><td>Varies</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:12px"><strong>Shopping — Vineland Premium Outlets</strong> (~20 min)<br>
+      <span style="font-size:13px;color:var(--ink-light)">Nike, Coach, Polo Ralph Lauren, Kate Spade, Michael Kors, Under Armour, Tory Burch · 📍 8200 Vineland Ave · ⏱ ~1.5–3 hrs</span></p>
+    </div>
+
+    <p class="section-label">Afternoon — Everyone Regroups</p>
+
+    <div class="block">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Option</th><th>Details</th><th>Duration</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Resort chill</strong></td><td>Pool, drinks, decompression</td><td>~2–3 hrs</td></tr>
+            <tr><td><strong>Topgolf</strong></td><td>Bays ~$40–55/hr evening. <em>Half-price all day Tuesdays!</em></td><td>~1.5–2 hrs</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="section-label">Evening — Dinner Show</p>
+
+    <div class="block">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Show</th><th>Style</th><th>$/Person</th><th>Duration</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Medieval Times</strong></td><td>Jousting, sword fights, 4-course feast</td><td>$60–70</td><td>~2 hrs</td></tr>
+            <tr><td><strong>Mango's Tropical</strong></td><td>Live band, dancers, Latin dinner</td><td>$75–97</td><td>~2.5 hrs</td></tr>
+            <tr><td><strong>Pirates Dinner</strong></td><td>Acrobats, sword fights, pirate feast</td><td>$65–80</td><td>~2 hrs</td></tr>
+            <tr><td><strong>Capone's</strong></td><td>Prohibition comedy, mobsters, buffet</td><td>$50–65</td><td>~2 hrs</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout-green callout">
+        <strong>Recommendation:</strong> Medieval Times is the best group pick. Use code <strong>15MT</strong> for 15% off (valid through 12/31/2026). Capone's is best value — unlimited beer, wine &amp; cocktails included.
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FRIDAY ======================= -->
+  <section class="day-section" id="fri">
+    <h2 class="day-header">Friday, Feb 20</h2>
+    <p class="day-subtitle">Florida Adventure Day</p>
+
+    <div class="block">
+      <h3>🐊 Airboat Tour — Wild Florida <span style="font-weight:400;color:var(--ink-faint)">~2.5–3 hrs on-site</span></h3>
+      <p>Glide through protected swamps at the Headwaters of the Everglades. Expect alligators, bald eagles, wading birds. U.S. Coast Guard-certified captains. <strong>Airboat ticket includes free Gator Park admission</strong> (sloths, lemurs, crocs, monster gators).</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Package</th><th>$/Person</th><th>Duration</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1-Hr Airboat + Gator Park</strong></td><td>$95</td><td>~2.5–3 hrs total</td></tr>
+            <tr><td><strong>Add: Drive-Thru Safari</strong></td><td>+$22</td><td>+1 hr (185 acres of exotic animals)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px;color:var(--ink-light);margin-top:8px">📍 3301 Lake Cypress Rd, Kenansville · ☎️ (407) 957-3135 · Mon–Sat 9 AM–6 PM · <strong>Closed Sundays</strong><br>🌐 <a href="https://wildfloridairboats.com">wildfloridairboats.com</a> — reservations required, arrive 45 min early<br>🚗 ~45–55 min from resort · ☀️ Bring sunscreen, sunglasses. Ear protection provided.</p>
+    </div>
+
+    <div class="block">
+      <h3>🛍 Disney Springs — Lunch &amp; Shopping <span style="font-weight:400;color:var(--ink-faint)">~2–4 hrs</span></h3>
+      <p>Open-air shopping and dining district (~40 min from Wild Florida). Free to enter, free parking.</p>
+
+      <p class="section-label">Lunch</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Restaurant</th><th>Style</th><th>$/Person</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Polite Pig</strong></td><td>BBQ, craft cocktails</td><td>$18–28</td></tr>
+            <tr><td><strong>D-Luxe Burger</strong></td><td>Gourmet burgers, shakes</td><td>$15–22</td></tr>
+            <tr><td><strong>Blaze Pizza</strong></td><td>Build-your-own fast-casual</td><td>$12–16</td></tr>
+            <tr><td><strong>Earl of Sandwich</strong></td><td>Hot sandwiches, quick</td><td>$10–14</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px;color:var(--ink-light);margin-top:8px"><strong>Shopping:</strong> Sugarboo &amp; Co., World of Disney, Sephora, Zara, Uniqlo, Lululemon, Free People, The Art of Shaving, Basin</p>
+    </div>
+
+    <div class="block">
+      <h3>Evening — Dinner at Disney Springs <span style="font-weight:400;color:var(--ink-faint)">~1.5–2 hrs</span></h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Restaurant</th><th>Style</th><th>$/Person</th><th>Reserve?</th></tr></thead>
+          <tbody>
+            <tr><td><strong>The Boathouse</strong></td><td>Seafood &amp; steaks, waterfront</td><td>$35–60</td><td>Yes</td></tr>
+            <tr><td><strong>Wine Bar George</strong></td><td>Wine flights, small plates</td><td>$30–50</td><td>Yes</td></tr>
+            <tr><td><strong>Homecomin'</strong></td><td>Southern comfort, Chef Art Smith</td><td>$25–45</td><td>Yes</td></tr>
+            <tr><td><strong>Raglan Road</strong></td><td>Irish pub, live music &amp; dancers</td><td>$25–45</td><td>Walk-in OK</td></tr>
+            <tr><td><strong>Morimoto Asia</strong></td><td>Pan-Asian, sushi, cocktails</td><td>$30–55</td><td>Yes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <strong>Pick:</strong> The Boathouse for a special-feeling dinner — ask about vintage amphicar rides on the water (~$125 for 20 min, up to 3 people). Raglan Road if you want live music and pub energy.
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= SATURDAY ======================= -->
+  <section class="day-section" id="sat">
+    <h2 class="day-header">Saturday, Feb 21</h2>
+    <p class="day-subtitle">Last Full Day — Flex Day</p>
+
+    <p class="section-label">Morning/Afternoon — Pick Your Vibe</p>
+
+    <div class="option" id="sat-a">
+      <button class="option-toggle" onclick="toggleOption(this)">
+        <span class="option-badge badge-a">A</span>
+        <span class="option-title">ATV / Off-Road Adventure</span>
+        <svg class="option-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
+      </button>
+      <div class="option-body">
+        <div class="option-content">
+          <p><strong>Revolution Adventures</strong> (~30 min from resort)<br>230-acre private countryside in Clermont. Self-drive guided ATV tours through trails, mud, and open Florida ranch land.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Experience</th><th>$/Person</th><th>Duration</th></tr></thead>
+              <tbody>
+                <tr><td>ATV Tour (1 hour)</td><td>$90–120</td><td>~1.5 hrs</td></tr>
+                <tr><td>ATV Tour (2 hours)</td><td>$140–175</td><td>~2.5 hrs</td></tr>
+                <tr><td>Buggy / Side-by-Side (2-person)</td><td>$120–160</td><td>~1.5 hrs</td></tr>
+                <tr><td>Mucky Duck (amphibious, up to 4)</td><td>$150–200/vehicle</td><td>~1.5 hrs</td></tr>
+                <tr><td>Clay Shooting (25 clays)</td><td>$50–65</td><td>~30 min</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:13px;color:var(--ink-light);margin-top:8px">📍 4000 State Road 33, Clermont · ☎️ (863) 420-1023<br>🌐 <a href="https://revolutionadventures.com">revolutionadventures.com</a> — reservations required, arrive 30 min early<br>👟 Closed-toe shoes, clothes you don't mind getting muddy. 16+ with ID to drive.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="option" id="sat-b">
+      <button class="option-toggle" onclick="toggleOption(this)">
+        <span class="option-badge badge-b">B</span>
+        <span class="option-title">Topgolf</span>
+        <svg class="option-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
+      </button>
+      <div class="option-body">
+        <div class="option-content">
+          <p>Great if you skipped it earlier. Full restaurant and bar, climate-controlled bays, HDTVs everywhere.</p>
+          <div class="table-wrap">
+            <table class="detail-table">
+              <tbody>
+                <tr><td>Address</td><td>9295 Universal Blvd, Orlando, FL 32819</td></tr>
+                <tr><td>Sat Pricing</td><td>~$40/hr (open–noon), ~$53/hr (noon–5 PM), ~$63/hr (5 PM–close) per bay</td></tr>
+                <tr><td>Bay Capacity</td><td>Up to 6 players — one bay covers your whole group</td></tr>
+                <tr><td>Duration</td><td>~1.5–2 hrs</td></tr>
+                <tr><td>Drive</td><td>~25–30 min from resort</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout-warm callout">No half-price deal on Saturday (that's <strong>Tuesdays only</strong>). Morning slots are cheapest.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="option" id="sat-c">
+      <button class="option-toggle" onclick="toggleOption(this)">
+        <span class="option-badge badge-c">C</span>
+        <span class="option-title">Chill Morning + Old Town</span>
+        <svg class="option-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
+      </button>
+      <div class="option-body">
+        <div class="option-content">
+          <p>Sleep in, pool, coffee, light breakfast at the resort. Then hit <strong>Old Town Kissimmee</strong> (~15 min) — walkable strip with shops, bars, classic rides, and live music. Nostalgic Americana vibe.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Item</th><th>Cost</th></tr></thead>
+              <tbody>
+                <tr><td>Walking around</td><td>Free</td></tr>
+                <tr><td>Drinks &amp; snacks</td><td>$10–25/person</td></tr>
+                <tr><td>Rides (Ferris wheel, go-karts)</td><td>$5–15/ride</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="option" id="sat-d">
+      <button class="option-toggle" onclick="toggleOption(this)">
+        <span class="option-badge badge-d">D</span>
+        <span class="option-title">Beach Afternoon — Cocoa Beach</span>
+        <svg class="option-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
+      </button>
+      <div class="option-body">
+        <div class="option-content">
+          <p>Closest ocean beach to Kissimmee. About 1 hr 20 min east via the Beachline Expressway (SR-528). Head out late morning, spend a couple hours on the sand or walking the pier, grab a drink with an ocean view, cruise back for farewell dinner. ~5 hours total.</p>
+
+          <p><strong>Cocoa Beach Pier</strong> — 800-foot pier into the Atlantic with restaurants, bars, shops, and ocean views. No admission to walk the pier.</p>
+
+          <div class="table-wrap">
+            <table class="detail-table">
+              <tbody>
+                <tr><td>Drive</td><td>~1 hr 20 min (74 miles via SR-528)</td></tr>
+                <tr><td>Pier Address</td><td>401 Meade Ave, Cocoa Beach, FL 32931</td></tr>
+                <tr><td>Pier Parking</td><td>Sat–Sun $20 (free after 5 PM)</td></tr>
+                <tr><td>Street Parking</td><td>$2/hr via Passport Parking app</td></tr>
+                <tr><td>Feb Water</td><td>~64–72°F — wading &amp; walking, brisk for full swim</td></tr>
+                <tr><td>Feb Air</td><td>Highs 70–75°F — great for beach sitting &amp; pier walks</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="section-label">Eat / Drink at the Pier</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Spot</th><th>What It Is</th><th>$/Person</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Rikki Tiki Tavern</strong></td><td>Open-air tiki bar, end of pier, ocean views</td><td>$10–20 (drinks)</td></tr>
+                <tr><td><strong>Pier 62</strong></td><td>Casual seafood — oysters, fish tacos, gator tail</td><td>$20–35</td></tr>
+                <tr><td><strong>Coconuts on the Beach</strong></td><td>Beachfront, feet-in-the-sand vibe</td><td>$20–35</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout-warm callout">
+            <strong>February reality check:</strong> Atlantic water will be chilly (mid 60s–low 70s). Most people will be wading, beachcombing, and pier-walking — not doing a full swim. Air temp is warm and sunny, perfectly comfortable for sitting on the beach with a drink. Clearwater Beach (Gulf side) has warmer water but adds ~30+ min each way.
+          </div>
+
+          <a class="link-btn" href="https://www.cocoabeachpier.com/" target="_blank" rel="noopener">🌐 cocoabeachpier.com →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>Afternoon</h3>
+      <p>Back at resort. Pool, pack at a leisurely pace, firepit hangout, afternoon drinks. ~2–3 hrs.</p>
+    </div>
+
+    <div class="block">
+      <h3>Evening — Farewell Dinner</h3>
+      <p>Last night — pick a spot you haven't hit yet:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Restaurant</th><th>Area</th><th>Style</th><th>$/Person</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Christner's Prime</strong></td><td>Dr. Phillips (~30 min)</td><td>Old-school upscale steakhouse</td><td>$60–90</td></tr>
+            <tr><td><strong>Rocco's Tacos</strong></td><td>Dr. Phillips (~30 min)</td><td>Tableside guac, tequila flights</td><td>$25–40</td></tr>
+            <tr><td><strong>Celebration</strong></td><td>~15 min</td><td>Try a different spot than Tues</td><td>$25–45</td></tr>
+            <tr><td><strong>CityWalk</strong></td><td>Universal (~25 min)</td><td>Bigfire, Cowfish, etc.</td><td>$25–50</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= SUNDAY ======================= -->
+  <section class="day-section" id="sun">
+    <h2 class="day-header">Sunday, Feb 22</h2>
+    <p class="day-subtitle">Departure</p>
+
+    <div class="block">
+      <h3>Morning</h3>
+      <ul>
+        <li>Wake up, final pack</li>
+        <li>Breakfast at resort or quick stop nearby</li>
+        <li>Load up, check out</li>
+        <li>Head to airport / hit the road by 10:00 AM</li>
+      </ul>
+
+      <p class="section-label">Quick Breakfast Options</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Spot</th><th>Area</th><th>$/Person</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Resort café</strong></td><td>On-site</td><td>$10–18</td></tr>
+            <tr><td><strong>First Watch</strong></td><td>Kissimmee (~10 min)</td><td>$12–18</td></tr>
+            <tr><td><strong>Keke's Breakfast</strong></td><td>Kissimmee (~15 min)</td><td>$10–16</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= AREA GUIDES ======================= -->
+  <section class="day-section" id="guides">
+    <h2 class="day-header" style="border-top-color:var(--palm)">Area Guides</h2>
+    <p class="day-subtitle">Where you'll be hanging out</p>
+
+    <div class="guide-card">
+      <h3>Universal CityWalk</h3>
+      <p>Universal's open-air dining, shopping, and nightlife strip connecting all three parks. No ticket needed. Restaurants (Bigfire, Toothsome, Cowfish, Vivo), bars and clubs (Pat O'Brien's dueling pianos, Red Coconut Club, Rising Star karaoke), food courts, movie theater, Hollywood Drive-In mini golf, and the Universal Studios Store. Live music most evenings. Self-parking free after 6 PM.</p>
+      <a class="link-btn" href="https://www.universalorlando.com/web/en/us/theme-parks/citywalk" target="_blank" rel="noopener">🌐 universalorlando.com/citywalk →</a>
+    </div>
+
+    <div class="guide-card">
+      <h3>International Drive (I-Drive)</h3>
+      <p>Orlando's 14-mile tourist corridor. ICON Park (Orlando Eye, SEA LIFE Aquarium, Madame Tussauds, 40+ restaurants), Pointe Orlando (WonderWorks, nightlife), Fun Spot America (rides, go-karts), and Topgolf. Dinner shows (Medieval Times, Mango's, Pirates) plus Howl at the Moon all sit on or near I-Drive. I-Ride Trolley ($2/ride) runs the full strip.</p>
+      <a class="link-btn" href="https://www.internationaldriveorlando.com/" target="_blank" rel="noopener">🌐 internationaldriveorlando.com →</a>
+    </div>
+
+    <div class="guide-card">
+      <h3>Disney Springs</h3>
+      <p>120-acre open-air shopping/dining/entertainment complex at Walt Disney World. No ticket, free parking, free entry. Four neighborhoods: <strong>Marketplace</strong> (World of Disney), <strong>The Landing</strong> (waterfront dining — Boathouse, Morimoto, Raglan Road), <strong>Town Center</strong> (Zara, Uniqlo, Lululemon, Sephora — the main shopping strip), <strong>West Side</strong> (Splitsville bowling, AMC, Cirque du Soleil). 150+ shops and restaurants. Lakeside, walkable, well-landscaped.</p>
+      <a class="link-btn" href="https://www.disneysprings.com/" target="_blank" rel="noopener">🌐 disneysprings.com →</a>
+    </div>
+
+    <div class="guide-card">
+      <h3>Cocoa Beach</h3>
+      <p>Closest real ocean beach to Kissimmee — about 75 miles east on the Atlantic coast. Historic Cocoa Beach Pier (800 feet, restaurants, bars, shops), laid-back surf-town vibe, views of Port Canaveral cruise ships. Wide walkable beach with golden sand. Downtown strip along N. Atlantic Ave has surf shops, casual seafood, and ice cream. Not a fancy resort beach — it's a real Florida beach town.</p>
+      <a class="link-btn" href="https://www.cocoabeachpier.com/" target="_blank" rel="noopener">🌐 cocoabeachpier.com →</a>
+    </div>
+  </section>
+
+  <!-- ======================= COSTS ======================= -->
+  <section class="day-section" id="costs">
+    <h2 class="day-header" style="border-top-color:var(--sunset)">Cost Snapshot</h2>
+    <p class="day-subtitle">Per person estimates</p>
+
+    <div class="block" style="padding:12px">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Item</th><th>Cost</th><th>Who</th></tr></thead>
+          <tbody>
+            <tr><td>Universal (1-day Epic Universe)</td><td>$139–200</td><td>Everyone</td></tr>
+            <tr><td>Universal (Park-to-Park upgrade)</td><td>$185–260</td><td>Everyone</td></tr>
+            <tr><td>In-park food (lunch + snacks)</td><td>$20–35</td><td>Everyone</td></tr>
+            <tr><td>Golf at Oaks National</td><td>$45–75</td><td>3 golfers</td></tr>
+            <tr><td>Mani-pedi</td><td>$40–80</td><td>3 non-golfers</td></tr>
+            <tr><td>Topgolf (optional, 2 hrs)</td><td>$10–65</td><td>Everyone</td></tr>
+            <tr><td>Airboat tour (1-hr + Gator Park)</td><td>$95</td><td>Everyone</td></tr>
+            <tr><td>Dueling pianos (Howl, Tues)</td><td>$5–10 + drinks</td><td>Everyone</td></tr>
+            <tr><td>Dinner show (Medieval Times w/ code)</td><td>$50–70</td><td>Everyone</td></tr>
+            <tr><td>ATV adventure (optional Sat)</td><td>$90–175</td><td>If chosen</td></tr>
+            <tr><td>Dinners (4 evenings × ~$35 avg)</td><td>$100–200</td><td>Everyone</td></tr>
+            <tr><td>Lunches (2–3 casual meals)</td><td>$30–50</td><td>Everyone</td></tr>
+          </tbody>
+          <tbody>
+            <tr class="cost-total"><td colspan="2">Total per person (approx): $600–1,000</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12px;color:var(--ink-faint);margin-top:8px;text-align:center">Excludes lodging, flights, rental car, shopping, tips, and incidentals.</p>
+    </div>
+  </section>
+
+  <!-- ======================= BOOKING ======================= -->
+  <section class="day-section" id="book">
+    <h2 class="day-header" style="border-top-color:var(--palm)">Things to Book</h2>
+    <p class="day-subtitle">Lock these in before the trip</p>
+
+    <div class="block">
+      <ul class="checklist">
+        <li><strong>Universal Epic Universe tickets</strong> — buy online, date-based, can sell out</li>
+        <li><strong>Oaks National tee time</strong> — call pro shop or GolfNow (9:04 AM)</li>
+        <li><strong>Wild Florida airboat</strong> — reservations required (<a href="https://wildfloridairboats.com">wildfloridairboats.com</a>)</li>
+        <li><strong>Dinner show</strong> — Medieval Times or your pick (code <strong>15MT</strong> for 15% off)</li>
+        <li><strong>Disney Springs dinner</strong> — Boathouse, Wine Bar George, or Homecomin' (OpenTable)</li>
+        <li><strong>Revolution Adventures ATV</strong> — if doing Saturday (<a href="https://revolutionadventures.com">revolutionadventures.com</a>)</li>
+        <li><strong>Howl at the Moon table</strong> — optional, guarantees seats Tuesday</li>
+        <li><strong>Topgolf bay</strong> — reserve online for evening slots</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================= DRIVE TIMES ======================= -->
+  <section class="day-section" id="drives">
+    <h2 class="day-header" style="border-top-color:#7a6a5a">Drive Times</h2>
+    <p class="day-subtitle">From Mystic Dunes Resort</p>
+
+    <div class="block">
+      <div class="drive-row"><span class="dest">Universal / CityWalk / Epic Universe</span><span class="time">~25–30 min</span></div>
+      <div class="drive-row"><span class="dest">Topgolf (Universal Blvd)</span><span class="time">~25–30 min</span></div>
+      <div class="drive-row"><span class="dest">I-Drive (Howl at the Moon, shows)</span><span class="time">~30–35 min</span></div>
+      <div class="drive-row"><span class="dest">Disney Springs</span><span class="time">~15–25 min</span></div>
+      <div class="drive-row"><span class="dest">Celebration Town Center</span><span class="time">~15 min</span></div>
+      <div class="drive-row"><span class="dest">Old Town Kissimmee</span><span class="time">~15 min</span></div>
+      <div class="drive-row"><span class="dest">Oaks National Golf Club</span><span class="time">~20–25 min</span></div>
+      <div class="drive-row"><span class="dest">Wild Florida (Kenansville)</span><span class="time">~45–55 min</span></div>
+      <div class="drive-row"><span class="dest">Revolution Adventures (Clermont)</span><span class="time">~30 min</span></div>
+      <div class="drive-row"><span class="dest">Vineland Premium Outlets</span><span class="time">~20 min</span></div>
+      <div class="drive-row"><span class="dest">Cocoa Beach (Pier)</span><span class="time">~1 hr 20 min</span></div>
+      <div class="drive-row"><span class="dest">Orlando Intl Airport (MCO)</span><span class="time">~30–40 min</span></div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+function toggleOption(btn) {
+  const option = btn.closest('.option');
+  option.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
